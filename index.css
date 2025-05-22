@@ -1,0 +1,8 @@
+#heading {
+    color: red;
+    text-align: center;
+    border: 5px solid black;
+    display:flex;
+    /* margin: 20px; */
+    /* padding: 2px auto */
+}
