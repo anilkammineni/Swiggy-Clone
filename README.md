@@ -20,3 +20,24 @@
 - Tree Shaking - removes unused code
 - Different dev and prod bundles
 ******** (Dev build - npx parcel index.html) (Prod build - npx parcel build index.html)
+
+
+# Food ordering App
+
+/*
+** Header
+*   - Logo
+*   - Nav Items
+** Body
+*   - Search Bar
+*   - Card Container
+*   - Restaurant Container
+*   - Restaurant Cards
+        - Image
+        - name of restaurant, start rating, cuisine, delivery time
+** Footer
+*   - CopyRight
+*   - Links
+*   - Address
+*   - Contact
+*/
