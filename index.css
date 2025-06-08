@@ -83,3 +83,16 @@
     height: 400px;
     background-color: rgb(239, 243, 243);
 }
+
+.login {
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.search {
+  display: flex;
+}
+
+.search-box {
+  margin-right: 5px;
+}
