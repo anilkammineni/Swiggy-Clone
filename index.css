@@ -24,6 +24,8 @@
   margin: 10px;
   padding: 5px;
   width: 200px;
+  color: black;
+  text-decoration: none;
   background-color: rgb(229, 235, 235);
 }
 
@@ -95,4 +97,9 @@
 
 .search-box {
   margin-right: 5px;
+}
+
+.user-card {
+  padding: 10px;
+  border: 1px solid black;
 }
