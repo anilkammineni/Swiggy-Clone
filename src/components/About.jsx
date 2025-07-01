@@ -25,13 +25,3 @@ class About extends React.Component {
 }
 
 export default About;
-
-// export default function About() {
-
-//     return (
-//         <div>
-//             <h1>Hello, this is about us</h1>
-//             {<UserClass name = {"Anil class"} location = {"Lisle, IL"} />}
-//         </div>
-//     )
-// }
