@@ -11,8 +11,6 @@ class UserClass extends React.Component {
             location: "",
             avatarurl: "dummy"
         };
-
-        console.log("child constructor");
     }
 
     async componentDidMount() {
@@ -21,20 +19,14 @@ class UserClass extends React.Component {
         // API call. It ensures component is fully loaded first then get the data.
         // it is similar to useEffect() in functional components
 
-        console.log("Component did mount called");
-
         const data = await fetch("https://api.github.com/users/anilkammineni");
         const jsonData = await data.json();
-
-        console.log("Data is: ", jsonData);
         
         this.setState({
           name: jsonData?.name,
           location: jsonData?.login,
           avatarurl: jsonData?.avatar_url,
         });
-
-        console.log("Name is: ", this.state.name)
     };
 
     componentDidUpdate() {
@@ -46,8 +38,6 @@ class UserClass extends React.Component {
     }
 
     render() {
-        
-        console.log("Render method called");
 
         const { name, location, avatarurl } = this.state;
         return (

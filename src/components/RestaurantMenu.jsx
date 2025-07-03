@@ -9,7 +9,7 @@ export default function RestaurantMenu() {
 
   const resInfo = useRestaurantMenu(resId);
 
-  const [showIndex, setShowIndex] = useState(null);
+  const [showIndex, setShowIndex] = useState(0);
 
   if (resInfo === null) {
     return <Shimmer />;
@@ -41,9 +41,8 @@ export default function RestaurantMenu() {
           <RestaurantCategory
             key={category?.card.card.categoryId}
             data={category?.card?.card}
-            index = {index}
             showItems={index === showIndex && true}
-            setShowIndex={(prop) => setShowIndex(prop)}
+            setShowIndex={() => setShowIndex(index === showIndex ? null : index)}
           />
         );
       })}

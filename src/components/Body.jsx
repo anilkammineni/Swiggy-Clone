@@ -1,8 +1,9 @@
 import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Shimmer } from "./Shimmer";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
 
@@ -13,8 +14,6 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
   const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
-
-  console.log("Restaurants: ", listOfRestaurants);
 
   useEffect(() => {
     fetchData();
@@ -46,6 +45,8 @@ const Body = () => {
     return <h1>Looks like you are offline!! Please check your internet connection</h1>
   }
 
+  const { loggedInUser, setUserName} = useContext(UserContext);
+
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
@@ -58,13 +59,16 @@ const Body = () => {
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-          <button className="px-4 py-1 m-4 bg-green-100 rounded-lg" onClick={handleFilter}>
+          <button
+            className="px-4 py-1 m-4 bg-green-100 rounded-lg hover:cursor-pointer"
+            onClick={handleFilter}
+          >
             Search
           </button>
         </div>
         <div className="search m-4 p-4 flex items-center">
           <button
-            className="px-4 py-1 bg-gray-100 rounded-lg"
+            className="px-4 py-1 bg-gray-100 rounded-lg hover:cursor-pointer"
             onClick={() => {
               const filteredRestaurants = listOfRestaurants.filter(
                 (res) => res?.card?.card?.info?.avgRating > 4
@@ -75,6 +79,10 @@ const Body = () => {
             Top Rated Restaurants
           </button>
         </div>
+          <div className="search m-4 p-4 flex items-center">
+            <label>User Name :</label>
+          <input className="border border-black ml-1" value={loggedInUser} onChange={(e) => setUserName(e.target.value)}/>
+        </div>
       </div>
 
       <div className="flex flex-wrap">
@@ -84,7 +92,11 @@ const Body = () => {
               key={res.card.card.info.id}
               to={"/restaurants/" + res.card.card.info.id}
             >
-              {res.card.card.info.promoted === true ? <RestaurantCardPromoted resData={res.card.card.info} /> : <RestaurantCard resData={res.card.card.info} />}
+              {res.card.card.info.promoted === true ? (
+                <RestaurantCardPromoted resData={res.card.card.info} />
+              ) : (
+                <RestaurantCard resData={res.card.card.info} />
+              )}
             </Link>
           );
         })}
