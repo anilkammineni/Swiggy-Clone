@@ -1,12 +1,10 @@
 import React from "react";
 import UserClass from "./UserClass";
-import UserContext from "../utils/UserContext";
+import {UserContext} from "../utils/context-api/UserContext";
 
 class About extends React.Component {
   constructor(props) {
     super(props);
-
-    console.log("parent constructor");
   }
 
   componentDidMount() {
@@ -14,15 +12,14 @@ class About extends React.Component {
   }
 
   render() {
-    console.log("parent body");
     return (
       <div>
         <h1>Hello, this is about us</h1>
         <div>
-          LoggedIn User: 
+          LoggedIn User : 
           <UserContext.Consumer>
-            {(data) => {
-              return <h1 className="text-xl font-bold">{data.loggedInUser}</h1>
+            {({userName}) => {
+              return <span className="text-xl font-bold">&nbsp;{userName}</span>
             }}
           </UserContext.Consumer>
         </div>

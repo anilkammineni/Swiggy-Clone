@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { Shimmer } from "./Shimmer";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/UserContext";
+import {UserContext} from "../utils/context-api/UserContext";
 
 const Body = () => {
 
@@ -45,7 +45,7 @@ const Body = () => {
     return <h1>Looks like you are offline!! Please check your internet connection</h1>
   }
 
-  const { loggedInUser, setUserName} = useContext(UserContext);
+  const { userName, login} = useContext(UserContext);
 
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
@@ -81,7 +81,7 @@ const Body = () => {
         </div>
           <div className="search m-4 p-4 flex items-center">
             <label>User Name :</label>
-          <input className="border border-black ml-1" value={loggedInUser} onChange={(e) => setUserName(e.target.value)}/>
+          <input className="border border-black ml-1" value={userName} onChange={(e) => login(e.target.value)}/>
         </div>
       </div>
 

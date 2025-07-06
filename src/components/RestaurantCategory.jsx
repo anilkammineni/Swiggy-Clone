@@ -1,4 +1,4 @@
-import ItemList from "./ItemList";
+import RestaurantItemsList from "./RestaurantItemsList";
 
 const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
   const { title } = data;
@@ -24,7 +24,7 @@ const RestaurantCategory = ({ data, showItems, setShowIndex }) => {
           <span>{showItems ? upSymbol : downSymbol}</span>
         </div>
 
-        {showItems && <ItemList items={data?.itemCards} />}
+        {showItems && <RestaurantItemsList items={data?.itemCards} />}
       </div>
     </div>
   );
