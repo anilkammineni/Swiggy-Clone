@@ -28,8 +28,6 @@ const Header = () => {
 
   const onlineStatus = useOnlineStatus();
 
-  const cartItems = useSelector((store) => store.cart.items)
-
   const totalQuantity = useSelector((store) => store.cart.items.reduce((sum, item) => sum + (item.qty || 1), 0))
 
   return (
