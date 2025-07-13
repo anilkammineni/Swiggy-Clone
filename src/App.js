@@ -3,7 +3,14 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
+//import { createBrowserRouter, RouterProvider, Outlet } from "react-router";
+import {
+	Link,
+	createBrowserRouter,
+	RouterProvider,
+	Outlet,
+} from "react-router-dom";
+
 import { Provider } from "react-redux";
 
 // Lazy loading so we shouldn't import components

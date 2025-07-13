@@ -1,7 +1,9 @@
 import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 import { useContext, useEffect, useState } from "react";
 import { Shimmer } from "./Shimmer";
-import { Link } from "react-router";
+//import { Link } from "react-router";
+import { Link } from "react-router-dom"; // ✅ works in v7
+
 import useOnlineStatus from "../utils/useOnlineStatus";
 import {UserContext} from "../utils/context-api/UserContext";
 
@@ -55,6 +57,7 @@ const Body = () => {
         <div className="search m-4 p-4">
           <input
             type="text"
+            data-testid = "searchInput"
             className="border border-solid border-bl"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}

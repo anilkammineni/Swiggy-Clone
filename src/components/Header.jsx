@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
-import { Link } from "react-router";
+//import { Link } from "react-router";
+import { Link } from "react-router-dom";
+
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { UserContext } from "../utils/context-api/UserContext";
 import { useSelector } from "react-redux";
@@ -51,7 +53,8 @@ const Header = () => {
             <Link to={"/contact"}>Contact us</Link>
           </li>
           <li className="px-4 font-bold text-xl">
-            <Link to={"/cart"}>Cart - ({ totalQuantity} Items)</Link></li>
+            <Link to={"/cart"}>Cart - ({totalQuantity} Items)</Link>
+          </li>
           <button
             className="login"
             onClick={ handleLoginLogout}
