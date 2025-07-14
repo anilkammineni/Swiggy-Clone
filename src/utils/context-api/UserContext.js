@@ -4,7 +4,7 @@ const UserContext = createContext();
 
 const UserContextProvider = ({ children }) => {
     
-    const [userName, setUserName] = useState("");
+    const [userName, setUserName] = useState("Anil Kumar");
 
     const login = (value) => {
         setUserName(value);

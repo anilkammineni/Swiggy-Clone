@@ -84,7 +84,7 @@ const Body = () => {
         </div>
           <div className="search m-4 p-4 flex items-center">
             <label>User Name :</label>
-          <input className="border border-black ml-1" value={userName} onChange={(e) => login(e.target.value)}/>
+          <input data-testid = "userName" className="border border-black ml-1" value={userName} onChange={(e) => login(e.target.value)}/>
         </div>
       </div>
 

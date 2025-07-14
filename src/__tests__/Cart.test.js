@@ -8,7 +8,6 @@ import { Provider } from "react-redux";
 import appStore from "../utils/redux/appStore";
 import "@testing-library/jest-dom";
 import {
-	UserContext,
 	UserContextProvider,
 } from "../utils/context-api/UserContext";
 import { BrowserRouter } from "react-router-dom";

@@ -14,18 +14,7 @@ const Header = () => {
   const { login, userName } = useContext(UserContext);
 
   const handleLoginLogout = () => {
-    if (buttonName === "Login") {
-      login("Anil Kumar");
-      setButtonName("Logout");
-    }
-    else if (buttonName == "Logout" && userName.length == 0)
-    {
-      setButtonName("Login");
-    }
-    else {
-      login("");
-      setButtonName("Login");
-    }
+    buttonName == "Login" ? setButtonName("Logout") : setButtonName("Login")
   }
 
   const onlineStatus = useOnlineStatus();
@@ -40,7 +29,7 @@ const Header = () => {
       </div>
       <div className="flex items-center">
         <ul className="flex p-4 m-4">
-          <li className="mx-2.5">
+          <li data-testid = "onlineStatus" className="mx-2.5">
             Online Status: {onlineStatus ? "✅" : "🛑"}
           </li>
           <li className="px-4">
@@ -61,7 +50,7 @@ const Header = () => {
           >
             {buttonName}
           </button>
-          {userName && <li className="px-4">{userName}</li>}
+          {userName && <li data-testid = "headerUser" className="px-4">{userName}</li>}
         </ul>
       </div>
     </div>

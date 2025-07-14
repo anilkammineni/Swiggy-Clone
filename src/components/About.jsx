@@ -19,7 +19,7 @@ class About extends React.Component {
           LoggedIn User : 
           <UserContext.Consumer>
             {({userName}) => {
-              return <span className="text-xl font-bold">&nbsp;{userName}</span>
+              return <span data-testid = "aboutUsUser" className="text-xl font-bold">&nbsp;{userName}</span>
             }}
           </UserContext.Consumer>
         </div>
