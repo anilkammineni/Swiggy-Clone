@@ -55,7 +55,7 @@ const RestaurantItemsList = ({ items }) => {
                 <button data-testid = "quantity" className="text-green-600 hover:cursor-pointer">{ getQuantity(item?.card?.info?.id)}</button>
                 <button data-testid = "addItem" className="text-green-600 hover:cursor-pointer text-2xl" onClick={() =>handleAddItem(item)}>+</button>
             </div>}
-						<img src={CDN_URL + item?.card?.info?.imageId} />
+						<img src={CDN_URL + item?.card?.info?.imageId} alt="item"/>
 					</div>
 				</div>
 			);

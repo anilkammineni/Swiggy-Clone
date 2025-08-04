@@ -3,7 +3,7 @@ export default function Contact() {
     return (
 			<div>
 				<h1 className="font-bold text-2xl p-4 m-4">Contact Us Page</h1>
-				<form>
+				<form onSubmit={(e) => e.preventDefault()}>
 					<input
 						type="text"
 						className="border border-black p-2 m-2"

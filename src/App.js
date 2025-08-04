@@ -21,6 +21,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import UserContext, { UserContextProvider } from "./utils/context-api/UserContext";
 import appStore from "./utils/redux/appStore";
 import Cart from "./components/Cart";
+import app from "./utils/firebase";
 
 const AppLayout = () => {
 
